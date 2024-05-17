@@ -1,40 +1,35 @@
-import "./app.css";
-import ConditionalRemndering from "./ConditionalRemndering";
-import { useState } from "react";
-const App = () => {
-  const colorList = ["red", "orange", "blue", "green", "pink"];
-  const [count, setCount] = useState(0);
+// const App = () => {
+//   return (
+//     <div>
+//       <h1>this is react app</h1>
+//       <p>this isp paragraph </p>
+//     </div>
+//   );
+// };
+// import PropTypes from "prop-types";
 
-  function inCreaseCount() {
-    setCount(count + 1);
-  }
-  function deCreaseCount() {
-    setCount(count - 1);
-  }
+import ChildComp from "./ChildComp";
+
+function App() {
+  const myName= "Suraj";
   return (
     <div>
-      <h1>This is the first class of suraj</h1>
-      {colorList.map((a, b) => {
-        return (
-          <h3
-            key={a}
-            style={{
-              color: a,
-              fontSize: "5vw",
-              // background: "var(--primaryBgColor)",
-            }}
-          >
-            {b + 1}
-          </h3>
-        );
-      })}
-      <button onClick={() => inCreaseCount(4)}> increase count </button>
-      <button onClick={deCreaseCount}> decrease count </button>
-      <h2>{count}</h2>
-
-      {count > 3 ? <ConditionalRemndering count={count} name="Suraj" age={21} /> : <>Loading.....</>}
+      <h1>this is react app</h1>
+      <p>this is paragraph</p>
+      <ChildComp name={myName} />
     </div>
   );
-};
+}
 
-export default App;
+// export default App;
+
+// function MyApp({ children }) {
+//   return (
+//     <div>
+//       <h2> this is new react app </h2>
+//       {children}
+//     </div>
+//   );
+// }
+
+export { App };
