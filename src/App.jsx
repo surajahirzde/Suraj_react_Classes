@@ -8,15 +8,17 @@
 // };
 // import PropTypes from "prop-types";
 
-import ChildComp from "./ChildComp";
-
+// import ChildComp from "./ChildComp";
+import State from "./State";
 function App() {
-  const myName= "Suraj";
+  // const myName= "Suraj";
   return (
     <div>
-      <h1>this is react app</h1>
+      {/* <h1>this is react app</h1>
       <p>this is paragraph</p>
-      <ChildComp name={myName} />
+      <ChildComp name={myName} /> */}
+      <h3>State intro</h3>
+      <State />
     </div>
   );
 }

@@ -7,6 +7,10 @@ const ChildComp = (props) => {
         props.name
       }
       <GrandChild car={props.name} />
+      <GrandChild car={props.name} />
+      <GrandChild car={props.name} />
+      <GrandChild car={props.name} />
+      <GrandChild car={props.name} />
     </div>
   );
 };
