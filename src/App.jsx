@@ -9,16 +9,18 @@
 // import PropTypes from "prop-types";
 
 // import ChildComp from "./ChildComp";
-import State from "./State";
+// import State from "./State";
+import EventHandling from "./EventHandling";
 function App() {
   // const myName= "Suraj";
   return (
     <div>
-      {/* <h1>this is react app</h1>
+      {/* <h1>this is react app</h1> 
       <p>this is paragraph</p>
       <ChildComp name={myName} /> */}
-      <h3>State intro</h3>
-      <State />
+      {/* <h3>State intro</h3> */}
+      {/* <State /> */}
+      <EventHandling />
     </div>
   );
 }
