@@ -5,7 +5,7 @@ const List = () => {
       name: "Suraj",
       age: 29,
       state: "Gujrat",
-      image: userImg1,
+      image: userImg1,    
     },
     {
       name: "Suraj",
