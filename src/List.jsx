@@ -5,7 +5,7 @@ const List = () => {
       name: "Suraj",
       age: 29,
       state: "Gujrat",
-      image: userImg1,    
+      image: userImg1,
     },
     {
       name: "Suraj",
@@ -43,7 +43,6 @@ const List = () => {
                 First User Data
             </p>
             <img src={user[0].image} alt={user[0].image} />
-
       <div className="listArea" style={{display:"none"}}>
         {user.map((element, index) => {
           return (

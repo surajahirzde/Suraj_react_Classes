@@ -11,7 +11,8 @@
 // import ChildComp from "./ChildComp";
 // import State from "./State";
 // import EventHandling from "./EventHandling";
-import List from "./List";
+import Form from "./Form";
+// import List from "./List";
 function App() {
   // const myName= "Suraj";
   return (
@@ -22,7 +23,8 @@ function App() {
       {/* <h3>State intro</h3> */}
       {/* <State /> */}
       {/* <EventHandling /> */}
-      <List />
+      {/* <List /> */}
+      <Form />
     </div>
   );
 }
