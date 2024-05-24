@@ -7,7 +7,6 @@
 //   );
 // };
 // import PropTypes from "prop-types";
-
 // import ChildComp from "./ChildComp";
 // import State from "./State";
 // import EventHandling from "./EventHandling";
@@ -24,7 +23,7 @@ function App() {
       {/* <State /> */}
       {/* <EventHandling /> */}
       {/* <List /> */}
-      <Form />
+      <Form formType="post" />
     </div>
   );
 }
