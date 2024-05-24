@@ -37,6 +37,7 @@ const Form = () => {
           maxWidth: "300px",
           margin: "auto",
           gap: "1rem",
+          
         }}
         onSubmit={handleSubmit}
       >
