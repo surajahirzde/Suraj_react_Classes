@@ -1,13 +1,14 @@
 import { useState } from "react";
 
-const Form = () => {
-    
+const Form = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error,setError] = useState("")
-
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [apiData,setApiData] = useState(null)
   const handleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
     // const formData= new FormData(e.target);
     // const name= formData.get("name")
@@ -20,13 +21,40 @@ const Form = () => {
     //   alert("Form Submitted");
     // }
     //  check regex for name validation
-    if (name.match(/^[a-zA-Z]{3,12}$/)) {
-      alert("Form Submitted");
-    } else {
-      setError("Invalid Name");
-    }
-  };
+    password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)
+      ? ""
+      : setError("password must be strong");
 
+    // check regex for email validation
+    email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+      ? ""
+      : setError("email must be valid");
+
+    // error.length > 0
+    //   ? alert(error)
+    //   :
+
+    fetch("https://www.google.com", {
+      method: "POST",
+      // headers: {
+      //   "content-type": "application/json",
+      // },
+      body: {
+        n: name,
+        e: email,
+        p: password,
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        result.code === 200 && setApiData(result.data)
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setLoading(false);
+        console.log("task completed");
+      });
+  };
   return (
     <section>
       <h2>Form Handling</h2>
@@ -37,6 +65,7 @@ const Form = () => {
           maxWidth: "300px",
           margin: "auto",
           gap: "1rem",
+          backgroundColor: "springgreen",
         }}
         onSubmit={handleSubmit}
       >
@@ -68,13 +97,18 @@ const Form = () => {
           required
         />
         {/* <button type="submit">Submit</button> */}
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" disabled={loading} />
       </form>
-      {
-        error.length > 0 && <p> {error}</p>
-      }
+      {error.length > 0 && <p> {error}</p>}
+      {loading && <Loader type={props.formType} />}
     </section>
   );
 };
 
+
 export default Form;
+
+function Loader(props) {
+  const type= props.type
+  return <div className="Loader">{type}</div>;
+}
