@@ -10,7 +10,8 @@
 // import ChildComp from "./ChildComp";
 // import State from "./State";
 // import EventHandling from "./EventHandling";
-import Form from "./Form";
+import LifecycleExample from "./ClassCompnonent";
+// import Form from "./Form";
 // import List from "./List";
 function App() {
   // const myName= "Suraj";
@@ -23,7 +24,8 @@ function App() {
       {/* <State /> */}
       {/* <EventHandling /> */}
       {/* <List /> */}
-      <Form formType="post" />
+      {/* <Form formType="post" /> */}
+      <LifecycleExample />
     </div>
   );
 }
